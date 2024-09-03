@@ -1,7 +1,201 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Cash Register with Tabs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        .cash-register-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .tab {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 15px;
+        }
+        .tab button {
+            flex: 1;
+            padding: 10px;
+            font-size: 1.2em;
+            border: none;
+            background-color: #ddd;
+            color: #333;
+            border-radius: 5px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .tab button.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .category {
+            display: none;
+        }
+        .category.active {
+            display: block;
+        }
+        .product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .product label {
+            font-size: 1.2em;
+            flex: 1;
+            text-align: left;
+        }
+        .product button {
+            width: 50px;
+            height: 50px;
+            font-size: 1.5em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .product input {
+            width: 60px;
+            height: 50px;
+            text-align: center;
+            font-size: 1.2em;
+            margin: 0 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .total {
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .calculate-btn, .reset-btn {
+            width: 100%;
+            height: 60px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 15px;
+            text-align: center;
+        }
+        .calculate-btn {
+            background-color: #28a745;
+            color: white;
+        }
+        .reset-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+        .cart-list {
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        .cart-list h2 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .cart-item span {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div class="cash-register-container">
+        <h1>Cash Register</h1>
+
+        <div class="tab">
+            <button class="active" onclick="openCategory('category1')">Essen</button>
+            <button onclick="openCategory('category2')">Trinken</button>
+            <button onclick="openCategory('category3')">Anderes</button>
+        </div>
+
+        <div id="category1" class="category active">
+            <div class="product">
+                <label for="product1">Bratwurst (7.-)</label>
+                <button onclick="decreaseQuantity('product1')">-</button>
+                <input type="number" id="product1" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product1')">+</button>
+            </div>
+            <div class="product">
+                <label for="product2">Rösti (8.-)</label>
+                <button onclick="decreaseQuantity('product2')">-</button>
+                <input type="number" id="product2" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product2')">+</button>
+            </div>
+        </div>
+
+        <div id="category2" class="category">
+            <div class="product">
+                <label for="product3">Bier (5.-)</label>
+                <button onclick="decreaseQuantity('product3')">-</button>
+                <input type="number" id="product3" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product3')">+</button>
+            </div>
+            <div class="product">
+                <label for="product4">Gin Tonic (9.-)</label>
+                <button onclick="decreaseQuantity('product4')">-</button>
+                <input type="number" id="product4" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product4')">+</button>
+            </div>
+        </div>
+
+        <div id="category3" class="category">
+            <div class="product">
+                <label for="product5">Product 5 (5.-)</label>
+                <button onclick="decreaseQuantity('product5')">-</button>
+                <input type="number" id="product5" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product5')">+</button>
+            </div>
+            <div class="product">
+                <label for="product6">Product 6 (6.-)</label>
+                <button onclick="decreaseQuantity('product6')">-</button>
+                <input type="number" id="product6" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product6')">+</button>
+            </div>
+        </div>
+
+        <button class="calculate-btn" onclick="calculateTotal()">Calculate Total</button>
+        <button class="reset-btn" onclick="resetForm()">Reset</button>
+
+        <div class="total" id="totalPrice">Total: 0.00</div>
+
+        <div class="cart-list" id="cartList">
+            <h2>Items Added:</h2>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
