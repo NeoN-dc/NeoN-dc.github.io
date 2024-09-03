@@ -1,0 +1,10 @@
+{
+  "name": "scc rechner",
+  "short_name": "scc rechner",
+  "theme_color": "#FFF",
+  "background_color": "#FFF",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+}
