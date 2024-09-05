@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Cash Register with Tabs</title>
+    <title>SC-Kasse</title>
     <link rel="manifest" href="manifest.json" />
     <style>
         body {
@@ -134,7 +134,7 @@
 </head>
 <body>
     <div class="cash-register-container">
-        <h1>Cash Register</h1>
+        <h1>SchlössliChilbi Kasse</h1>
 
         <div class="tab">
             <button class="active" onclick="openCategory('category1')">Essen</button>
@@ -403,13 +403,13 @@
             </div>
         </div>
 
-        <button class="calculate-btn" onclick="calculateTotal()">Calculate Total</button>
-        <button class="reset-btn" onclick="resetForm()">Reset</button>
+        <button class="calculate-btn" onclick="calculateTotal()">Total berechnen</button>
+        <button class="reset-btn" onclick="resetForm()">Zurücksetzen</button>
 
         <div class="total" id="totalPrice">Total: 0.00</div>
 
         <div class="cart-list" id="cartList">
-            <h2>Items Added:</h2>
+            <h2>Produkte:</h2>
         </div>
     </div>
 
