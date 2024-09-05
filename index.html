@@ -138,52 +138,268 @@
 
         <div class="tab">
             <button class="active" onclick="openCategory('category1')">Essen</button>
-            <button onclick="openCategory('category2')">Trinken</button>
-            <button onclick="openCategory('category3')">Anderes</button>
+            <button onclick="openCategory('category2')">Getränke</button>
+            <button onclick="openCategory('category3')">Bar</button>
         </div>
 
         <div id="category1" class="category active">
             <div class="product">
-                <label for="product1">Bratwurst (7.-)</label>
+                <label for="product1">Kalbsbratw. m. Brot</label>
                 <button onclick="decreaseQuantity('product1')">-</button>
                 <input type="number" id="product1" value="0" min="0" readonly>
                 <button onclick="increaseQuantity('product1')">+</button>
             </div>
             <div class="product">
-                <label for="product2">Rösti (8.-)</label>
+                <label for="product2">Kalbsbratw. m. Pommes</label>
                 <button onclick="decreaseQuantity('product2')">-</button>
                 <input type="number" id="product2" value="0" min="0" readonly>
                 <button onclick="increaseQuantity('product2')">+</button>
             </div>
-        </div>
-
-        <div id="category2" class="category">
             <div class="product">
-                <label for="product3">Bier (5.-)</label>
+                <label for="product3">Klöpfer m. Brot</label>
                 <button onclick="decreaseQuantity('product3')">-</button>
                 <input type="number" id="product3" value="0" min="0" readonly>
                 <button onclick="increaseQuantity('product3')">+</button>
             </div>
             <div class="product">
-                <label for="product4">Gin Tonic (9.-)</label>
+                <label for="product4">Klöpfer m. Pommes</label>
                 <button onclick="decreaseQuantity('product4')">-</button>
                 <input type="number" id="product4" value="0" min="0" readonly>
                 <button onclick="increaseQuantity('product4')">+</button>
             </div>
-        </div>
-
-        <div id="category3" class="category">
             <div class="product">
-                <label for="product5">Product 5 (5.-)</label>
+                <label for="product5">Schw. Steak m. Brot</label>
                 <button onclick="decreaseQuantity('product5')">-</button>
                 <input type="number" id="product5" value="0" min="0" readonly>
                 <button onclick="increaseQuantity('product5')">+</button>
             </div>
             <div class="product">
-                <label for="product6">Product 6 (6.-)</label>
+                <label for="product6">Schw. Steak m. Pommes</label>
                 <button onclick="decreaseQuantity('product6')">-</button>
                 <input type="number" id="product6" value="0" min="0" readonly>
                 <button onclick="increaseQuantity('product6')">+</button>
+            </div>
+            <div class="product">
+                <label for="product12">Kalbsbratw. m. Pommes</label>
+                <button onclick="decreaseQuantity('product12')">-</button>
+                <input type="number" id="product12" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product12')">+</button>
+            </div>
+            <div class="product">
+                <label for="product7">Rösti Nature</label>
+                <button onclick="decreaseQuantity('product7')">-</button>
+                <input type="number" id="product7" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product7')">+</button>
+            </div>
+            <div class="product">
+                <label for="product8">+ Speck</label>
+                <button onclick="decreaseQuantity('product8')">-</button>
+                <input type="number" id="product8" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product8')">+</button>
+            </div>
+            <div class="product">
+                <label for="product9">+ Käse</label>
+                <button onclick="decreaseQuantity('product9')">-</button>
+                <input type="number" id="product9" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product9')">+</button>
+            </div>
+            <div class="product">
+                <label for="product10">+ Ei</label>
+                <button onclick="decreaseQuantity('product10')">-</button>
+                <input type="number" id="product10" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product10')">+</button>
+            </div>
+            <div class="product">
+                <label for="product11">SoftIce</label>
+                <button onclick="decreaseQuantity('product11')">-</button>
+                <input type="number" id="product11" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product11')">+</button>
+            </div>
+        </div>
+
+        <div id="category2" class="category">
+            <div class="product">
+                <label for="product13">Mineral mit</label>
+                <button onclick="decreaseQuantity('product13')">-</button>
+                <input type="number" id="product13" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product13')">+</button>
+            </div>
+            <div class="product">
+                <label for="product14">Mineral ohne</label>
+                <button onclick="decreaseQuantity('product14')">-</button>
+                <input type="number" id="product14" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product14')">+</button>
+            </div>
+            <div class="product">
+                <label for="product15">Rivella</label>
+                <button onclick="decreaseQuantity('product15')">-</button>
+                <input type="number" id="product15" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product15')">+</button>
+            </div>
+            <div class="product">
+                <label for="product16">Cola</label>
+                <button onclick="decreaseQuantity('product16')">-</button>
+                <input type="number" id="product16" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product16')">+</button>
+            </div>
+            <div class="product">
+                <label for="product17">IceTea</label>
+                <button onclick="decreaseQuantity('product17')">-</button>
+                <input type="number" id="product17" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product17')">+</button>
+            </div>
+            <div class="product">
+                <label for="product18">Focus Water</label>
+                <button onclick="decreaseQuantity('product18')">-</button>
+                <input type="number" id="product18" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product18')">+</button>
+            </div>
+            <div class="product">
+                <label for="product19">Suure Most mit</label>
+                <button onclick="decreaseQuantity('product19')">-</button>
+                <input type="number" id="product19" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product19')">+</button>
+            </div>
+            <div class="product">
+                <label for="product20">Suure Most ohne</label>
+                <button onclick="decreaseQuantity('product20')">-</button>
+                <input type="number" id="product20" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product20')">+</button>
+            </div>
+            <div class="product">
+                <label for="product21">Bier</label>
+                <button onclick="decreaseQuantity('product21')">-</button>
+                <input type="number" id="product21" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product21')">+</button>
+            </div>
+            <div class="product">
+                <label for="product22">Bier Alk. frei</label>
+                <button onclick="decreaseQuantity('product22')">-</button>
+                <input type="number" id="product22" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product22')">+</button>
+            </div>
+            <div class="product">
+                <label for="product23">Weisswein</label>
+                <button onclick="decreaseQuantity('product23')">-</button>
+                <input type="number" id="product23" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product23')">+</button>
+            </div>
+            <div class="product">
+                <label for="product24">Rose</label>
+                <button onclick="decreaseQuantity('product24')">-</button>
+                <input type="number" id="product24" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product24')">+</button>
+            </div>
+            <div class="product">
+                <label for="product25">Rotwein</label>
+                <button onclick="decreaseQuantity('product25')">-</button>
+                <input type="number" id="product25" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product25')">+</button>
+            </div>
+        </div>
+
+        <div id="category3" class="category">
+            <div class="product">
+                <label for="product26">Shot</label>
+                <button onclick="decreaseQuantity('product26')">-</button>
+                <input type="number" id="product26" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product26')">+</button>
+            </div>
+            <div class="product">
+                <label for="product27">Gin Tonic</label>
+                <button onclick="decreaseQuantity('product27')">-</button>
+                <input type="number" id="product27" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product27')">+</button>
+            </div>
+            <div class="product">
+                <label for="product28">Aperol Spritz</label>
+                <button onclick="decreaseQuantity('product28')">-</button>
+                <input type="number" id="product28" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product28')">+</button>
+            </div>
+            <div class="product">
+                <label for="product29">Gumibärli</label>
+                <button onclick="decreaseQuantity('product29')">-</button>
+                <input type="number" id="product29" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product29')">+</button>
+            </div>
+            <div class="product">
+                <label for="product30">Cola Martini</label>
+                <button onclick="decreaseQuantity('product30')">-</button>
+                <input type="number" id="product30" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product30')">+</button>
+            </div>
+            <div class="product">
+                <label for="product31">Madlejäger (Flying Hirsch)</label>
+                <button onclick="decreaseQuantity('product31')">-</button>
+                <input type="number" id="product31" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product31')">+</button>
+            </div>
+            <div class="product">
+                <label for="product21">Bier</label>
+                <button onclick="decreaseQuantity('product21')">-</button>
+                <input type="number" id="product21" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product21')">+</button>
+            </div>
+            <div class="product">
+                <label for="product22">Bier Alk. frei</label>
+                <button onclick="decreaseQuantity('product22')">-</button>
+                <input type="number" id="product22" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product22')">+</button>
+            </div>
+            <div class="product">
+                <label for="product32">Smirnov Ice</label>
+                <button onclick="decreaseQuantity('product32')">-</button>
+                <input type="number" id="product32" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product32')">+</button>
+            </div>
+            <div class="product">
+                <label for="product33">Smirnov mit Schuss</label>
+                <button onclick="decreaseQuantity('product33')">-</button>
+                <input type="number" id="product33" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product33')">+</button>
+            </div>
+            <div class="product">
+                <label for="product34">Schlössli Drink</label>
+                <button onclick="decreaseQuantity('product34')">-</button>
+                <input type="number" id="product34" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product34')">+</button>
+            </div>
+            <div class="product">
+                <label for="product35">Vodka Mate</label>
+                <button onclick="decreaseQuantity('product35')">-</button>
+                <input type="number" id="product35" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product35')">+</button>
+            </div>
+            <div class="product">
+                <label for="product36">Virgin Sunrise</label>
+                <button onclick="decreaseQuantity('product36')">-</button>
+                <input type="number" id="product36" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product36')">+</button>
+            </div>
+            <div class="product">
+                <label for="product37">Schlösslimatte</label>
+                <button onclick="decreaseQuantity('product37')">-</button>
+                <input type="number" id="product37" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product37')">+</button>
+            </div>
+            <div class="product">
+                <label for="product38">Wildberry Martini</label>
+                <button onclick="decreaseQuantity('product38')">-</button>
+                <input type="number" id="product38" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product38')">+</button>
+            </div>
+            <div class="product">
+                <label for="product39">RedBull</label>
+                <button onclick="decreaseQuantity('product39')">-</button>
+                <input type="number" id="product39" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product39')">+</button>
+            </div>
+            <div class="product">
+                <label for="product40">Gin Alk. frei</label>
+                <button onclick="decreaseQuantity('product40')">-</button>
+                <input type="number" id="product40" value="0" min="0" readonly>
+                <button onclick="increaseQuantity('product40')">+</button>
             </div>
         </div>
 
