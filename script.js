@@ -93,7 +93,7 @@ function calculateTotal() {
     }
 
     document.getElementById('totalPrice').textContent = `Total: ${total.toFixed(2)}`;
-    document.getElementById('cartList').innerHTML = `<h2>Items Added:</h2>${cartContent}`;
+    document.getElementById('cartList').innerHTML = `<h2>Produkte:</h2>${cartContent}`;
 }
 
 // Reset the form and clear the cart list
@@ -102,7 +102,7 @@ function resetForm() {
     inputs.forEach(input => input.value = 0);
 
     document.getElementById('totalPrice').textContent = 'Total: 0.00';
-    document.getElementById('cartList').innerHTML = '<h2>Items Added:</h2>';
+    document.getElementById('cartList').innerHTML = '<h2>Produkte:</h2>';
 }
 
 // Update the cart list when quantities change
