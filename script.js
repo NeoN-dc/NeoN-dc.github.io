@@ -1,127 +1,169 @@
-// Switch between categories
-function openCategory(categoryId) {
-    const categories = document.getElementsByClassName('category');
-    const tabs = document.getElementsByClassName('tab')[0].getElementsByTagName('button');
+const productData = [
+    // Category 1: Essen
+    { id: 'product1', name: 'Kalbsbratw. m. Brot', price: 10, category: 'Essen' },
+    { id: 'product2', name: 'Kalbsbratw. m. Pommes', price: 12, category: 'Essen' },
+    { id: 'product3', name: 'Klöpfer m. Brot', price: 8, category: 'Essen' },
+    { id: 'product4', name: 'Klöpfer m. Pommes', price: 10, category: 'Essen' },
+    { id: 'product5', name: 'Schw. Steak m. Brot', price: 15, category: 'Essen' },
+    { id: 'product6', name: 'Schw. Steak m. Pommes', price: 17, category: 'Essen' },
+    { id: 'product12', name: 'Kalbsbratw. m. Pommes', price: 12, category: 'Essen' },
+    { id: 'product7', name: 'Rösti Nature', price: 6, category: 'Essen' },
+    { id: 'product8', name: '+ Speck', price: 2, category: 'Essen' },
+    { id: 'product9', name: '+ Käse', price: 2, category: 'Essen' },
+    { id: 'product10', name: '+ Ei', price: 2, category: 'Essen' },
+    { id: 'product11', name: 'SoftIce', price: 5, category: 'Essen' },
+    { id: 'product44', name: 'Kuchen 2.-', price: 2, category: 'Essen' },
+    { id: 'product45', name: 'Kuchen 3.-', price: 3, category: 'Essen' },
+    { id: 'product46', name: 'Kuchen 4.-', price: 4, category: 'Essen' },
+    { id: 'product47', name: 'Torten', price: 5, category: 'Essen' },
 
-    for (let i = 0; i < categories.length; i++) {
-        categories[i].classList.remove('active');
-        tabs[i].classList.remove('active');
-    }
+    // Category 2: Getränke
+    { id: 'product13', name: 'Mineral mit/ohne', price: 4, category: 'Getränke' },
+    { id: 'product14', name: 'Mate', price: 5, category: 'Getränke' },
+    { id: 'product15', name: 'Rivella', price: 4, category: 'Getränke' },
+    { id: 'product16', name: 'Cola', price: 4, category: 'Getränke' },
+    { id: 'product17', name: 'IceTea', price: 4, category: 'Getränke' },
+    { id: 'product18', name: 'Focus Water', price: 5, category: 'Getränke' },
+    { id: 'product19', name: 'Suure Most mit/ohne', price: 5, category: 'Getränke' },
 
-    document.getElementById(categoryId).classList.add('active');
-    document.querySelector(`button[onclick="openCategory('${categoryId}')"]`).classList.add('active');
-}
+    // Subcategory: Getränke
+    { id: 'product21', name: 'Bier', price: 6, category: 'Getränke' },
+    { id: 'product22', name: 'Bier Alk. frei', price: 5, category: 'Getränke' },
 
-// Increase the quantity of a product
-function increaseQuantity(productId) {
-    const inputField = document.getElementById(productId);
-    inputField.value = parseInt(inputField.value) + 1;
-    updateCartList();
-}
+    // Subcategory: Getränke
+    { id: 'product23', name: 'Weisswein', price: 7, category: 'Getränke' },
+    { id: 'product24', name: 'Rose', price: 7, category: 'Getränke' },
+    { id: 'product25', name: 'Rotwein', price: 7, category: 'Getränke' },
 
-// Decrease the quantity of a product
-function decreaseQuantity(productId) {
-    const inputField = document.getElementById(productId);
-    if (inputField.value > 0) {
-        inputField.value = parseInt(inputField.value) - 1;
-    }
-    updateCartList();
-}
+    // Subcategory: Getränke
+    { id: 'product41', name: 'Kaffee', price: 4, category: 'Getränke' },
+    { id: 'product42', name: 'Kaffe-Lutz', price: 5, category: 'Getränke' },
+    { id: 'product43', name: 'Kaffee-Berghof', price: 6, category: 'Getränke' },
 
-// Calculate the total price and update the cart list
-function calculateTotal() {
-    // Prices for each product
-    const prices = {
-        product1: 7.00,
-        product2: 12.00,
-        product3: 6.00,
-        product4: 10.00,
-        product5: 13.00,
-        product6: 18.00,
-        product7: 8.00,
-        product8: 3.00,
-        product9: 3.00,
-        product10: 2.00,
-        product11: 5.00,
-        product12: 6.00,
-        product13: 4.00,
-        product14: 4.00,
-        product15: 5.00,
-        product16: 5.00,
-        product17: 5.00,
-        product18: 5.00,
-        product19: 6.00,
-        product20: 5.00,
-        product21: 5.00,
-        product22: 4.00,
-        product23: 20.00,
-        product24: 20.00,
-        product25: 20.00,
-        product26: 5.00,
-        product27: 9.00,
-        product28: 9.00,
-        product29: 9.00,
-        product30: 9.00,
-        product31: 9.00,
-        product32: 6.00,
-        product33: 8.00,
-        product34: 9.00,
-        product35: 9.00,
-        product36: 7.00,
-        product37: 7.00,
-        product38: 7.00,
-        product39: 5.00,
-        product40: 7.00,
-        product41: 4.00,
-        product42: 5.00,
-        product43: 7.00,
-        product44: 2.00,
-        product45: 3.00,
-        product46: 4.00,
-        product47: 5.00,
-        product48: 5.00,
-        product49: 8.00,
-        product50: 4.00,
-        product51: 4.00,
-        product52: 5.00,
-        product53: 5.00,
-        product54: 5.00,
-        product55: 5.00,
-        product56: 5.00
+    // Category 3: Bar
+    { id: 'product26', name: 'Shot', price: 5, category: 'Bar' },
+    
+    // Subcategory: Bar
+    { id: 'product27', name: 'Gin Tonic', price: 8, category: 'Bar' },
+    { id: 'product28', name: 'Aperol Spritz', price: 8, category: 'Bar' },
+    { id: 'product29', name: 'Gummibärli', price: 8, category: 'Bar' },
+    { id: 'product30', name: 'Martini Cola', price: 7, category: 'Bar' },
+    { id: 'product31', name: 'Madlejäger', price: 7, category: 'Bar' },
+    { id: 'product34', name: 'Schlössli Drink', price: 9, category: 'Bar' },
+    { id: 'product35', name: 'Lillet', price: 8, category: 'Bar' },
+
+    // Subcategory: Bar
+    { id: 'product20', name: 'Bier', price: 6, category: 'Bar' },
+    { id: 'product32', name: 'Smirnov Ice', price: 7, category: 'Bar' },
+    { id: 'product33', name: 'Smirnov mit Schuss', price: 8, category: 'Bar' },
+    { id: 'product49', name: 'Mate mit Schuss', price: 7, category: 'Bar' },
+
+    // Subcategory: Bar
+    { id: 'product36', name: 'Virgin Sunrise', price: 6, category: 'Bar' },
+    { id: 'product37', name: 'Schlösslimatte', price: 6, category: 'Bar' },
+    { id: 'product38', name: 'Wilder Martini', price: 6, category: 'Bar' },
+    { id: 'product40', name: 'Gin Alk. frei', price: 6, category: 'Bar' },
+    { id: 'product50', name: 'Bier Alk. frei', price: 5, category: 'Bar' },
+    { id: 'product51', name: 'Mineral mit/ohne', price: 4, category: 'Bar' },
+    { id: 'product52', name: 'Rivella', price: 4, category: 'Bar' },
+    { id: 'product53', name: 'Cola', price: 4, category: 'Bar' },
+    { id: 'product54', name: 'IceTea', price: 4, category: 'Bar' },
+    { id: 'product55', name: 'Focus Water', price: 5, category: 'Bar' },
+    { id: 'product56', name: 'RedBull', price: 5, category: 'Bar' }
+];
+
+let cart = {}; // Keeps track of product quantities
+
+// Batch render products dynamically into categories
+function renderProducts() {
+    const categoryContainers = {
+        category1: document.getElementById('category1'),
+        category2: document.getElementById('category2'),
+        category3: document.getElementById('category3')
     };
 
+    productData.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+        productDiv.innerHTML = `
+            <label for="${product.id}">${product.name}</label>
+            <button data-product-id="${product.id}" data-action="decrease">-</button>
+            <input type="number" id="${product.id}" value="0" min="0" readonly>
+            <button data-product-id="${product.id}" data-action="increase">+</button>
+        `;
+        categoryContainers[product.category].appendChild(productDiv);
+    });
+}
+
+// Handle category switching
+function openCategory(categoryId) {
+    document.querySelectorAll('.category').forEach(category => {
+        category.classList.remove('active');
+    });
+    document.getElementById(categoryId).classList.add('active');
+}
+
+// Update cart and quantity display
+function updateQuantity(productId, action) {
+    if (!cart[productId]) cart[productId] = 0;
+    
+    if (action === 'increase') {
+        cart[productId]++;
+    } else if (action === 'decrease' && cart[productId] > 0) {
+        cart[productId]--;
+    }
+
+    document.getElementById(productId).value = cart[productId];
+    updateCartList();
+}
+
+// Use event delegation to handle button clicks
+document.body.addEventListener('click', function (e) {
+    if (e.target.dataset.productId) {
+        const productId = e.target.dataset.productId;
+        const action = e.target.dataset.action;
+        updateQuantity(productId, action);
+    }
+});
+
+// Calculate total price and update the cart
+function calculateTotal() {
     let total = 0;
     let cartContent = '';
-    for (let productId in prices) {
-        const productQty = parseInt(document.getElementById(productId).value);
-        if (productQty > 0) {
-            const productTotal = productQty * prices[productId];
+
+    productData.forEach(product => {
+        const qty = cart[product.id] || 0;
+        if (qty > 0) {
+            const productTotal = qty * product.price;
             total += productTotal;
 
-            const productName = document.querySelector(`label[for="${productId}"]`).textContent;
             cartContent += `
                 <div class="cart-item">
-                    <span>${productName} x${productQty}</span>
+                    <span>${product.name} x${qty}</span>
                     <span>${productTotal.toFixed(2)}</span>
                 </div>
             `;
         }
-    }
+    });
 
     document.getElementById('totalPrice').textContent = `Total: ${total.toFixed(2)}`;
     document.getElementById('cartList').innerHTML = `<h2>Produkte:</h2>${cartContent}`;
 }
 
-// Reset the form and clear the cart list
+// Reset the form and cart
 function resetForm() {
-    const inputs = document.querySelectorAll('.product input');
-    inputs.forEach(input => input.value = 0);
+    cart = {};
+    document.querySelectorAll('.product input').forEach(input => {
+        input.value = 0;
+    });
 
     document.getElementById('totalPrice').textContent = 'Total: 0.00';
     document.getElementById('cartList').innerHTML = '<h2>Produkte:</h2>';
 }
 
-// Update the cart list when quantities change
 function updateCartList() {
     calculateTotal();
 }
+
+// Initial rendering of products
+renderProducts();
