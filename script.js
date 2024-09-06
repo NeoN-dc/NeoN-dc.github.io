@@ -103,6 +103,7 @@ function openCategory(categoryId) {
         category.classList.remove('active');
     });
     document.getElementById(categoryId).classList.add('active');
+    document.querySelector(`button[onclick="openCategory('${categoryId}')"]`).classList.add('active');
 }
 
 // Update cart and quantity display
