@@ -32,9 +32,9 @@ function decreaseQuantity(productId) {
 function calculateTotal() {
     // Prices for each product
     const prices = {
-        product1: 6.00,
+        product1: 7.00,
         product2: 12.00,
-        product3: 5.00,
+        product3: 6.00,
         product4: 10.00,
         product5: 13.00,
         product6: 18.00,
@@ -44,19 +44,18 @@ function calculateTotal() {
         product10: 2.00,
         product11: 5.00,
         product12: 6.00,
-        product13: 5.00,
+        product13: 4.00,
         product14: 4.00,
         product15: 5.00,
         product16: 5.00,
         product17: 5.00,
         product18: 5.00,
         product19: 6.00,
-        product20: 6.00,
         product21: 5.00,
         product22: 4.00,
-        product23: 23.00,
-        product24: 23.00,
-        product25: 23.00,
+        product23: 20.00,
+        product24: 20.00,
+        product25: 20.00,
         product26: 5.00,
         product27: 9.00,
         product28: 9.00,
@@ -71,7 +70,14 @@ function calculateTotal() {
         product37: 7.00,
         product38: 7.00,
         product39: 5.00,
-        product40: 5.00
+        product40: 5.00,
+        product41: 4.00,
+        product42: 5.00,
+        product43: 7.00,
+        product44: 2.00,
+        product45: 3.00,
+        product46: 4.00,
+        product47: 5.00
     };
 
     let total = 0;
