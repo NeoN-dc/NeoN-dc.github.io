@@ -102,6 +102,9 @@ function openCategory(categoryId) {
     document.querySelectorAll('.category').forEach(category => {
         category.classList.remove('active');
     });
+    document.querySelectorAll('.tab').forEach(button => {
+        button.classList.remove('active');
+    });
     document.getElementById(categoryId).classList.add('active');
     document.querySelector(`button[onclick="openCategory('${categoryId}')"]`).classList.add('active');
 }
