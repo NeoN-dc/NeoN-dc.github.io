@@ -18,10 +18,6 @@ img {
     box-shadow: 5px 5px 5px #000;
 }
 
-audio {
-    max-width: 100%;
-}
-
 .wrapper {
     margin: 10px;
     padding: 10px;
