@@ -20,8 +20,8 @@ img {
 }
 
 audio {
-    width: 90%;
-    height: auto;
+    width: 500px;
+    height: 80px;
     overflow: visible;
 }
 
