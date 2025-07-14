@@ -14,7 +14,7 @@ h1 {
 
 img {
     max-width: 90%;
-    height: 50px;
+    height: auto;
     border-radius: 25px;
     box-shadow: 5px 5px 5px #000;
 }
