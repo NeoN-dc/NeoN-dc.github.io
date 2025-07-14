@@ -1,0 +1,43 @@
+body {
+    font-family: arial, sans-serif;
+    margin: 0;
+    padding: 0px;
+    background: #fde7c7;
+}
+
+h1 {
+    font-family: arial, sans-serif;
+    margin: 10px;
+    padding: 0;
+}
+
+img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px #000;
+}
+
+audio {
+    max-width: 100%;
+}
+
+.wrapper {
+    margin: 10px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+}
+
+.debug_border {
+    border: 5px solid #ff0000;
+}
