@@ -21,6 +21,7 @@ img {
 
 audio {
     max-width: 95%;
+    height: 50px;
     overflow: visible;
 }
 
