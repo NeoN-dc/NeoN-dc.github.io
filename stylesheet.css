@@ -20,7 +20,7 @@ img {
 }
 
 audio {
-    max-width: 95%;
+    width: 90%;
     height: 50px;
     overflow: visible;
 }
